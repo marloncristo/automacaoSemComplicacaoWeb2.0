@@ -43,6 +43,11 @@ public class TesteWeb {
         System.out.println("Teste dois");
     }
 
+    @Test
+    public void terceiroTeste(){
+        System.out.println("Teste tres");
+    }
+
     @After
     public void finalizaTeste(){
         driver.quit();
