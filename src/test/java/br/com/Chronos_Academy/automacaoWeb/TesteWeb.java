@@ -23,7 +23,8 @@ public class TesteWeb {
      driver.manage().window().maximize();
 
      //acessa uma página
-     driver.get("https://www.chronosacademy.com.br");
+    driver.get("https://www.chronosacademy.com.br");
+
     }
 
     @Test
@@ -55,8 +56,10 @@ public class TesteWeb {
     Assert.assertEquals("AUTOMAÇÃO SEM COMPLICAÇÃO WEB 2.0", textoTituloPaginaRedirecionada);
     }
 
+
     @After
-    public void finalizaTeste(){
+    public void finalizaTeste() throws InterruptedException {
+        Thread.sleep(3000);
         driver.quit();
     }
 
