@@ -27,7 +27,7 @@ public class TesteWeb {
     }
 
     @Test
-    public void primeiroTeste(){
+    public void acessoAPaginaPrincipal(){
     // localizando elemento
     String xpathTitulo = "//section[2]//h4";
     WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo));
@@ -39,13 +39,20 @@ public class TesteWeb {
     }
 
     @Test
-    public void segundoTeste(){
-        System.out.println("Teste dois");
-    }
+    public void abreAPaginaConhecaNossosCursos(){
+    //localizar elemento
+    WebElement btnConhecaNossosCursos = driver.findElementByXPath("//section[2]/div[3]//a");
 
-    @Test
-    public void terceiroTeste(){
-        System.out.println("Teste tres");
+    //interagir com o elemento
+    btnConhecaNossosCursos.click();
+
+    // validar redirecionamento
+        //mapeamento elemento
+    String xpathTituloPaginaRedirecionada = "//section[2]//h2";
+        //transformando em webelement e comparando texto
+    WebElement TituloPaginaRedirecionada = driver.findElementByXPath(xpathTituloPaginaRedirecionada);
+    String textoTituloPaginaRedirecionada = TituloPaginaRedirecionada.getText();
+    Assert.assertEquals("AUTOMAÇÃO SEM COMPLICAÇÃO WEB 2.0", textoTituloPaginaRedirecionada);
     }
 
     @After
